@@ -1,4 +1,27 @@
 <!DOCTYPE html>
+<!-- DOCUMENTAÇÃO TÉCNICA (VISÍVEL APENAS NO CÓDIGO)
+    
+    ESTRUTURA DO PROJETO (SPA):
+    Este site é uma Single Page Application. As secções são alternadas através da manipulação da classe 'hidden'.
+    
+    COMO ADICIONAR UMA SECÇÃO:
+    1. Cria um novo bloco <section id="ID_DA_SECCAO" class="hidden"> dentro da tag <main>.
+    2. Adiciona um botão no menu <nav> com onclick="showSection('ID_DA_SECCAO')".
+    3. Dá ao botão o ID "nav-ID_DA_SECCAO" para suporte ao estado ativo.
+    
+    COMO ADICIONAR UMA FACÇÃO:
+    1. Localiza a div #faction-list.
+    2. Adiciona um bloco com a classe 'faction-item'. A pesquisa filtra automaticamente o texto interior.
+    
+    VARIÁVEIS DE ESTILO (CSS):
+    --blood-red: Cor das molduras e tabelas.
+    --bright-red: Cor de destaque para títulos e links.
+    --deep-black: Cor de fundo principal.
+    
+    NOTAS PARA GITHUB PAGES:
+    - O mapa 'Etharis Mapa Mundo.jpg' deve estar na mesma pasta que o index.html.
+    - O GitHub Pages é sensível a maiúsculas/minúsculas nos nomes de ficheiros.
+    -->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -185,9 +208,9 @@
 
             <!-- MAP SECTION -->
             <div class="mb-16 text-center">
-                <h2 class="text-2xl mb-6">Mapa de Etharis</h2>
+                <h2 class="text-2xl mb-6 font-bold">Mapa de Etharis</h2>
                 <div class="inline-block map-border shadow-2xl overflow-hidden">
-                    <img src="Etharis Mapa Mundo.jpg" alt="Mapa de Etharis" class="max-w-full h-auto block opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    <img src="Etharis Mapa Mundo.webp" alt="Mapa de Etharis" class="max-w-full h-auto block opacity-90 hover:opacity-100 transition-opacity duration-500">
                 </div>
             </div>
 
@@ -235,7 +258,7 @@
                             <tr>
                                 <td class="font-bold red-accent">Império de Bürach</td>
                                 <td>Gnóstico / Político</td>
-                                <td class="text-sm">Utopia em declínio, consumida pela Peste de Maligant e deuses mortos.</td>
+                                <td class="text-sm">Antigo Império em declínio, consumida pela Peste de Maligant e deuses mortos.</td>
                             </tr>
                             <tr>
                                 <td class="font-bold red-accent">Ostoya</td>
@@ -265,8 +288,8 @@
 
         <!-- SECTION: OSTOYA DETALHADO -->
         <section id="ostoya" class="hidden">
-            <h2 class="text-4xl mb-2 text-center">O Império da Noite Eterna</h2>
-            <p class="text-center text-red-500 italic mb-12">A terra que nunca viu o sol nascer.</p>
+            <h2 class="text-4xl mb-2 text-center">Ostoya</h2>
+            <p class="text-center text-red-500 italic mb-12">O Império da Noite Eterna</p>
             
             <div class="space-y-12">
                 <div class="content-card p-8">
@@ -466,5 +489,6 @@
             }
         });
     </script>
+
 </body>
 </html>
