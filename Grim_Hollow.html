@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grim Hollow - Guia de Introdução</title>
+    <title>Grim Hollow</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,11 +118,32 @@
             padding: 25px;
             position: relative;
         }
+
+        .map-border {
+            border: 4px solid var(--blood-red);
+            outline: 2px solid #222;
+        }
         
         .faction-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
+        }
+
+        .search-bar {
+            background: #000;
+            border: 1px solid var(--blood-red);
+            color: white;
+            padding: 10px 15px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 30px;
+            font-family: 'Almendra', serif;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--bright-red);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -146,7 +167,6 @@
                 <button onclick="showSection('inicio')" class="nav-link active py-1" id="nav-inicio">O Mundo</button>
                 <button onclick="showSection('ostoya')" class="nav-link py-1" id="nav-ostoya">Ostoya</button>
                 <button onclick="showSection('facoes')" class="nav-link py-1" id="nav-facoes">Facções</button>
-                <button onclick="showSection('sistemas')" class="nav-link py-1" id="nav-sistemas">Sistemas</button>
                 <button onclick="showSection('recursos')" class="nav-link py-1" id="nav-recursos">Recursos</button>
             </div>
         </div>
@@ -162,6 +182,14 @@
                 <p class="text-red-600 italic text-2xl">Vós que entrais, abandonai toda a esperança.</p>
                 <div class="blood-divider"></div>
             </header>
+
+            <!-- MAP SECTION -->
+            <div class="mb-16 text-center">
+                <h2 class="text-2xl mb-6">Mapa de Etharis</h2>
+                <div class="inline-block map-border shadow-2xl overflow-hidden">
+                    <img src="Etharis Mapa Mundo.jpg" alt="Mapa de Etharis" class="max-w-full h-auto block opacity-90 hover:opacity-100 transition-opacity duration-500">
+                </div>
+            </div>
 
             <div class="grid lg:grid-cols-3 gap-8 mb-16">
                 <div class="lg:col-span-2 content-card p-8">
@@ -294,89 +322,57 @@
 
         <!-- SECTION: FACÇÕES COMPLETO -->
         <section id="facoes" class="hidden">
-            <h2 class="text-4xl mb-8 text-center">Facções de Etharis</h2>
-            <div class="faction-grid">
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Companhia Comercial Augustine</h4>
-                    <p class="text-sm opacity-80">Valoriza o lucro acima das pessoas. Presente em cada país, suas missões frequentemente forçam escolhas entre a moralidade e o benefício econômico.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Companhia das Espadas Livres</h4>
-                    <p class="text-sm opacity-80">Guilda mercenária de elite com um rígido código de honra: lealdade à companhia, honestidade nos negócios e vingança contra traidores.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Sindicato de Ébano</h4>
-                    <p class="text-sm opacity-80">Organização criminosa envolvida em assassinatos, sequestros e mercado negro. Preferem as sombras e contratam freelancers para o trabalho sujo.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Taumaturgo</h4>
-                    <p class="text-sm opacity-80">Ordem mítica de arquimagos vista por muitos como lenda, mas para os oprimidos é um símbolo de rebelião contra regimes autoritários.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Observadores dos Fiéis</h4>
-                    <p class="text-sm opacity-80">Dedicados a preservar as antigas fés sob o Dogma Eterno. Reverenciam os Arquiserafins e destroem o unholy por qualquer meio necessário.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Inquisição Arcanista</h4>
-                    <p class="text-sm opacity-80">Ordem religiosa baseada em Castinella que caça utilizadores de magia para proteger a estrutura social e política vigente.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Corte Carmesim</h4>
-                    <p class="text-sm opacity-80">Conselho de vampiros nobres que governa Ostoya através de um sistema feudal sangrento, detendo poder absoluto sobre a vida e a morte.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Guildas de Caçadores de Monstros</h4>
-                    <p class="text-sm opacity-80">Profissionais que transformaram a caça em negócio corporativo, compartilhando conhecimento e recursos como a arma mais letal contra abominações.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Morbus Doctore</h4>
-                    <p class="text-sm opacity-80">Médicos de máscaras assustadoras focados em tratar (ou erradicar) a Peste Chorosa em grandes metrópoles, com métodos muitas vezes brutais.</p>
-                </div>
-                <div class="content-card p-6">
-                    <h4 class="red-accent text-lg mb-2">Ordem da Alvorada</h4>
-                    <p class="text-sm opacity-80">Milícia de dissidentes ostoyanos sediada em Raevo, totalmente comprometida com a destruição dos mortos-vivos e libertação da pátria.</p>
-                </div>
-                <div class="content-card p-6">
+            <h2 class="text-4xl mb-4 text-center">Facções de Etharis</h2>
+            <p class="text-center opacity-60 mb-8">Organizações que moldam o destino do continente</p>
+            
+            <div class="flex justify-center">
+                <input type="text" id="faction-search" onkeyup="filterFactions()" placeholder="Procurar facção..." class="search-bar">
+            </div>
+
+            <div class="faction-grid" id="faction-list">
+                <div class="content-card p-6 faction-item">
                     <h4 class="red-accent text-lg mb-2">Círculo Prismático</h4>
                     <p class="text-sm opacity-80">Druidas que acreditam que apenas a guerra e o sacrifício de sangue podem manter o mundo salvo do despertar de Gormadraug, a Serpente Prismática.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- SECTION: SISTEMAS -->
-        <section id="sistemas" class="hidden">
-            <h2 class="text-4xl mb-12 text-center">Sistemas de Jogo</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="content-card p-8">
-                        <h3 class="text-2xl mb-4 red-accent">Transformações</h3>
-                        <p class="text-sm leading-relaxed mb-4">Um jogador pode, voluntariamente ou por acidente, transformar-se em algo inumano. Isso concede poderes imensos, mas traz defeitos graves e uma perda gradual da humanidade.</p>
-                        <ul class="text-xs space-y-2 opacity-80 list-disc pl-4">
-                            <li>Vampiro / Lobisomem</li>
-                            <li>Serafim / Lich</li>
-                            <li>Licantropo / Aberração</li>
-                        </ul>
-                    </div>
-                    <div class="content-card p-8">
-                        <h3 class="text-2xl mb-4 red-accent">Sangromancia</h3>
-                        <p class="text-sm leading-relaxed">Magia de Sangue é comum para quem busca poder rápido. Exige sacrifícios de essência vital para potenciar feitiços, tornando o conjurador tão perigoso quanto o monstro que ele caça.</p>
-                    </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Companhia Comercial Augustine</h4>
+                    <p class="text-sm opacity-80">Valoriza o lucro acima das pessoas. Presente em cada país, suas missões frequentemente forçam escolhas entre a moralidade e o benefício econômico.</p>
                 </div>
-
-                <div class="space-y-8">
-                    <div class="content-card p-8">
-                        <h3 class="text-2xl mb-4 red-accent">Antecedentes Avançados</h3>
-                        <p class="text-sm leading-relaxed mb-4">O teu lugar na sociedade importa. Podes ser um Inquisidor oficial, um Líder de Culto ou um Mercador influente, com recursos que afetam diretamente a narrativa e a política.</p>
-                    </div>
-                    <div class="content-card p-8 bg-red-950/20">
-                        <h3 class="text-2xl mb-4 red-accent">Conselhos de Sobrevivência</h3>
-                        <ol class="text-xs space-y-3 font-bold uppercase tracking-wide">
-                            <li>1. Não sejas o "Herói Brilhante".</li>
-                            <li>2. Gere os teus recursos com obsessão.</li>
-                            <li>3. A magia tem consequências sociais fatais.</li>
-                            <li>4. A morte é um companheiro constante.</li>
-                        </ol>
-                    </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Companhia das Espadas Livres</h4>
+                    <p class="text-sm opacity-80">Guilda mercenária de elite com um rígido código de honra: lealdade à companhia, honestidade nos negócios e vingança contra traidores.</p>
+                </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Corte Carmesim</h4>
+                    <p class="text-sm opacity-80">Conselho de vampiros nobres que governa Ostoya através de um sistema feudal sangrento, detendo poder absoluto sobre a vida e a morte.</p>
+                </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Guildas de Caçadores de Monstros</h4>
+                    <p class="text-sm opacity-80">Profissionais que transformaram a caça em negócio corporativo, compartilhando conhecimento e recursos como a arma mais letal contra abominações.</p>
+                </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Inquisição Arcanista</h4>
+                    <p class="text-sm opacity-80">Ordem religiosa baseada em Castinella que caça utilizadores de magia para proteger a estrutura social e política vigente.</p>
+                </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Morbus Doctore</h4>
+                    <p class="text-sm opacity-80">Médicos de máscaras assustadoras focados em tratar (ou erradicar) a Peste Chorosa em grandes metrópoles, com métodos muitas vezes brutais.</p>
+                </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Observadores dos Fiéis</h4>
+                    <p class="text-sm opacity-80">Dedicados a preservar as antigas fés sob o Dogma Eterno. Reverenciam os Arquiserafins e destroem o unholy por qualquer meio necessário.</p>
+                </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Ordem da Alvorada</h4>
+                    <p class="text-sm opacity-80">Milícia de dissidentes ostoyanos sediada em Raevo, totalmente comprometida com a destruição dos mortos-vivos e libertação da pátria.</p>
+                </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Sindicato de Ébano</h4>
+                    <p class="text-sm opacity-80">Organização criminosa envolvida em assassinatos, sequestros e mercado negro. Preferem as sombras e contratam freelancers para o trabalho sujo.</p>
+                </div>
+                <div class="content-card p-6 faction-item">
+                    <h4 class="red-accent text-lg mb-2">Taumaturgo</h4>
+                    <p class="text-sm opacity-80">Ordem mítica de arquimagos vista por muitos como lenda, mas para os oprimidos é um símbolo de rebelião contra regimes autoritários.</p>
                 </div>
             </div>
         </section>
@@ -436,6 +432,21 @@
             
             // Update URL hash without jumping
             history.pushState(null, null, '#' + id);
+        }
+
+        function filterFactions() {
+            const input = document.getElementById('faction-search');
+            const filter = input.value.toLowerCase();
+            const items = document.getElementsByClassName('faction-item');
+
+            Array.from(items).forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(filter)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
         }
 
         // Handle browser back/forward and initial load
