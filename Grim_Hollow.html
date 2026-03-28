@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grim Hollow - Guia de Introdução</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=MedievalSharp&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blood-red: #880000;
+            --bright-red: #ff3333;
+            --deep-black: #0a0a0a;
+            --parchment: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--deep-black);
+            color: var(--parchment);
+            font-family: 'Almendra', serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'MedievalSharp', cursive;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .gothic-title {
+            font-family: 'Uncial Antiqua', serif;
+            color: #ff0000;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff0000;
+            border-bottom-color: #880000;
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+        }
+
+        .content-card {
+            background: linear-gradient(145deg, #121212, #050505);
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid rgba(136, 0, 0, 0.2);
+            pointer-events: none;
+            margin: 10px;
+        }
+
+        .blood-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
+            margin: 2rem 0;
+        }
+
+        .custom-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #880000;
+        }
+
+        .section-enter {
+            animation: fadeIn 0.6s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+        th {
+            background-color: var(--blood-red);
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #222;
+        }
+        tr:hover td {
+            background-color: rgba(136, 0, 0, 0.08);
+        }
+
+        .red-accent { color: var(--bright-red); }
+        
+        .border-ornament {
+            border: 1px solid #444;
+            padding: 25px;
+            position: relative;
+        }
+        
+        .faction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="custom-scroll">
+
+    <!-- Background Noise Overlay -->
+    <div class="fixed inset-0 pointer-events-none opacity-5 z-0">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <filter id="noise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+            </filter>
+            <rect width="100%" height="100%" filter="url(#noise)"/>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black/95 border-b border-red-900/50 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col lg:flex-row justify-between items-center gap-4">
+            <div class="text-2xl gothic-title cursor-pointer" onclick="showSection('inicio')">GRIM HOLLOW</div>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 text-xs uppercase tracking-widest font-bold">
+                <button onclick="showSection('inicio')" class="nav-link active py-1" id="nav-inicio">O Mundo</button>
+                <button onclick="showSection('ostoya')" class="nav-link py-1" id="nav-ostoya">Ostoya</button>
+                <button onclick="showSection('facoes')" class="nav-link py-1" id="nav-facoes">Facções</button>
+                <button onclick="showSection('sistemas')" class="nav-link py-1" id="nav-sistemas">Sistemas</button>
+                <button onclick="showSection('recursos')" class="nav-link py-1" id="nav-recursos">Recursos</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-24">
+        
+        <!-- SECTION: INICIO / PILARES / PANORAMA -->
+        <section id="inicio" class="section-enter">
+            <header class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl mb-4">Etharis</h1>
+                <p class="text-red-600 italic text-2xl">Vós que entrais, abandonai toda a esperança.</p>
+                <div class="blood-divider"></div>
+            </header>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <div class="lg:col-span-2 content-card p-8">
+                    <h2 class="text-2xl mb-6 border-l-4 border-red-700 pl-4">Os Pilares da Fantasia Sombria</h2>
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="red-accent mb-2">Escolhas Difíceis</h3>
+                            <p class="text-sm opacity-80 leading-relaxed">Frequentemente, não existe uma "escolha certa". Podes ter de escolher entre salvar inocentes ou derrotar um mal maior, comprometendo os teus valores.</p>
+                        </div>
+                        <div>
+                            <h3 class="red-accent mb-2">Sobrevivência</h3>
+                            <p class="text-sm opacity-80 leading-relaxed">Recursos são escassos, a natureza é hostil e a morte é uma possibilidade constante. A comida e o descanso são tão valiosos quanto o ouro.</p>
+                        </div>
+                        <div>
+                            <h3 class="red-accent mb-2">Corrupção</h3>
+                            <p class="text-sm opacity-80 leading-relaxed">O mal não está apenas nos monstros, mas dentro dos próprios heróis. Maldições e traumas deixam cicatrizes na alma.</p>
+                        </div>
+                        <div>
+                            <h3 class="red-accent mb-2">Moralidade Cinzenta</h3>
+                            <p class="text-sm opacity-80 leading-relaxed">Personagens com falhas e segredos encaixam melhor. O mundo é cruel e não perdoa o idealismo ingénuo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-card p-8 bg-red-950/5">
+                    <h2 class="text-2xl mb-6 border-l-4 border-red-700 pl-4">Religião e Magia</h2>
+                    <p class="text-sm mb-4 leading-relaxed">Os antigos deuses destruíram-se uns aos outros. O que resta são os <strong>Arquiserafins</strong> e os <strong>Arquidémonos</strong>, que concedem poderes em troca de devoção ou sacrifícios.</p>
+                    <p class="text-sm italic opacity-70">"Em Etharis, o divino é complicado e a magia é vista com medo pela maioria da população."</p>
+                </div>
+            </div>
+
+            <h2 class="text-3xl mb-8 text-center">Panorama Regional</h2>
+            <div class="content-card overflow-hidden mb-12">
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Região</th>
+                                <th>Sabor de Horror</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold red-accent">Império de Bürach</td>
+                                <td>Gnóstico / Político</td>
+                                <td class="text-sm">Utopia em declínio, consumida pela Peste de Maligant e deuses mortos.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold red-accent">Ostoya</td>
+                                <td>Gótico / Vampírico</td>
+                                <td class="text-sm">Noite eterna governada pela Corte Carmesim.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold red-accent">Clãs de Valikan</td>
+                                <td>Sobrevivência / Nórdico</td>
+                                <td class="text-sm">Norte gelado de honra e sangue, lutando contra o despertar de Gormadraug.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold red-accent">Reino de Charneault</td>
+                                <td>Contos de Fadas Sombrios</td>
+                                <td class="text-sm">Cavaleiros e espíritos da natureza corrompidos pela Névoa Negra.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold red-accent">Aliança de Castinella</td>
+                                <td>Inquisição / Teocracia</td>
+                                <td class="text-sm">Terras áridas onde o zelo religioso caça qualquer praticante de magia.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: OSTOYA DETALHADO -->
+        <section id="ostoya" class="hidden">
+            <h2 class="text-4xl mb-2 text-center">O Império da Noite Eterna</h2>
+            <p class="text-center text-red-500 italic mb-12">A terra que nunca viu o sol nascer.</p>
+            
+            <div class="space-y-12">
+                <div class="content-card p-8">
+                    <h3 class="text-2xl mb-4 red-accent">A Queda das Trevas</h3>
+                    <p class="leading-relaxed">
+                        Originalmente fundada por secessionistas do Império de Bürach, Ostoya prometia liberdade. No entanto, há séculos, a <strong>Queda das Trevas</strong> mergulhou a metade oriental numa noite perpétua. Um sol negro e frio domina o céu, permitindo que os vampiros caminhem livremente. Com a escuridão, as criaturas da noite emergiram das profundezas de <strong>Nokron</strong> para escravizar os vivos.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="border-ornament bg-black/40">
+                        <h4 class="text-lg font-bold mb-2">1. Soma</h4>
+                        <p class="text-xs opacity-80">Coração político e sede da capital, Nova Ostoya. É o centro da decadência vampírica, onde o "Imposto de Sangue" é coletado com rigor absoluto sob o olhar da Corte Carmesim.</p>
+                    </div>
+                    <div class="border-ornament bg-red-950/10">
+                        <h4 class="text-lg font-bold mb-2 text-white">2. Raevo</h4>
+                        <p class="text-xs opacity-80">A província rebelde. Habitada por magos e dissidentes em sua capital fortificada, Castalore. É a última resistência ativa e o farol de esperança para a libertação nacional.</p>
+                    </div>
+                    <div class="border-ornament bg-black/40">
+                        <h4 class="text-lg font-bold mb-2">3. Eastspine</h4>
+                        <p class="text-xs opacity-80">Escudo militar ao longo das montanhas da Espinha Cinzenta. Suas fortalezas guardam os passos de montanha e mantêm vigilância férrea sobre os Skaa locais.</p>
+                    </div>
+                    <div class="border-ornament bg-black/40">
+                        <h4 class="text-lg font-bold mb-2">4. Terinima</h4>
+                        <p class="text-xs opacity-80">O celeiro sombrio. Florestas e campos que nunca viram o sol, onde o trabalho dos Skaa é levado ao limite enquanto lutam contra licantropos e espíritos vingativos.</p>
+                    </div>
+                    <div class="border-ornament bg-black/40">
+                        <h4 class="text-lg font-bold mb-2">5. Bezcodru</h4>
+                        <p class="text-xs opacity-80">Coração industrial e mineiro. Em Stehlenwald, a tecnologia e a magia fundem-se em laboratórios alquímicos e fábricas que alimentam os luxos da Corte.</p>
+                    </div>
+                    <div class="border-ornament bg-black/40">
+                        <h4 class="text-lg font-bold mb-2">6. Umbroi</h4>
+                        <p class="text-xs opacity-80">Província de névoas e silêncio. Lar de segredos antigos e vampiros isolados que estudam necromancia ancestral. Até os mortos-vivos temem o que habita aqui.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="content-card p-8 border-red-900/50">
+                        <h3 class="text-2xl mb-4 red-accent">Skaa: O Gado Escravo</h3>
+                        <p class="text-sm leading-relaxed">
+                            A população humana em Ostoya é composta pelos <strong>Skaa</strong>. Eles não possuem direitos e são propriedade dos nobres vampiros. Trabalham em terras arrendadas e pagam um imposto de sangue regular, servindo como sustento literal para a aristocracia. Qualquer rebelião é punida com a morte ou punições piores.
+                        </p>
+                    </div>
+                    <div class="content-card p-8 border-red-900/50">
+                        <h3 class="text-2xl mb-4 red-accent">Nokron: A Necrópole</h3>
+                        <p class="text-sm leading-relaxed">
+                            Anteriormente a "Cidade de Baixo", Nokron é uma necrópole colossal e labiríntica que se estende por quilômetros sob Ostoya. É um lugar de túmulos antigos, laboratórios necromânticos e o local de repouso dos vampiros mais poderosos da Corte Carmesim.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: FACÇÕES COMPLETO -->
+        <section id="facoes" class="hidden">
+            <h2 class="text-4xl mb-8 text-center">Facções de Etharis</h2>
+            <div class="faction-grid">
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Companhia Comercial Augustine</h4>
+                    <p class="text-sm opacity-80">Valoriza o lucro acima das pessoas. Presente em cada país, suas missões frequentemente forçam escolhas entre a moralidade e o benefício econômico.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Companhia das Espadas Livres</h4>
+                    <p class="text-sm opacity-80">Guilda mercenária de elite com um rígido código de honra: lealdade à companhia, honestidade nos negócios e vingança contra traidores.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Sindicato de Ébano</h4>
+                    <p class="text-sm opacity-80">Organização criminosa envolvida em assassinatos, sequestros e mercado negro. Preferem as sombras e contratam freelancers para o trabalho sujo.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Taumaturgo</h4>
+                    <p class="text-sm opacity-80">Ordem mítica de arquimagos vista por muitos como lenda, mas para os oprimidos é um símbolo de rebelião contra regimes autoritários.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Observadores dos Fiéis</h4>
+                    <p class="text-sm opacity-80">Dedicados a preservar as antigas fés sob o Dogma Eterno. Reverenciam os Arquiserafins e destroem o unholy por qualquer meio necessário.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Inquisição Arcanista</h4>
+                    <p class="text-sm opacity-80">Ordem religiosa baseada em Castinella que caça utilizadores de magia para proteger a estrutura social e política vigente.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Corte Carmesim</h4>
+                    <p class="text-sm opacity-80">Conselho de vampiros nobres que governa Ostoya através de um sistema feudal sangrento, detendo poder absoluto sobre a vida e a morte.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Guildas de Caçadores de Monstros</h4>
+                    <p class="text-sm opacity-80">Profissionais que transformaram a caça em negócio corporativo, compartilhando conhecimento e recursos como a arma mais letal contra abominações.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Morbus Doctore</h4>
+                    <p class="text-sm opacity-80">Médicos de máscaras assustadoras focados em tratar (ou erradicar) a Peste Chorosa em grandes metrópoles, com métodos muitas vezes brutais.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Ordem da Alvorada</h4>
+                    <p class="text-sm opacity-80">Milícia de dissidentes ostoyanos sediada em Raevo, totalmente comprometida com a destruição dos mortos-vivos e libertação da pátria.</p>
+                </div>
+                <div class="content-card p-6">
+                    <h4 class="red-accent text-lg mb-2">Círculo Prismático</h4>
+                    <p class="text-sm opacity-80">Druidas que acreditam que apenas a guerra e o sacrifício de sangue podem manter o mundo salvo do despertar de Gormadraug, a Serpente Prismática.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SISTEMAS -->
+        <section id="sistemas" class="hidden">
+            <h2 class="text-4xl mb-12 text-center">Sistemas de Jogo</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="content-card p-8">
+                        <h3 class="text-2xl mb-4 red-accent">Transformações</h3>
+                        <p class="text-sm leading-relaxed mb-4">Um jogador pode, voluntariamente ou por acidente, transformar-se em algo inumano. Isso concede poderes imensos, mas traz defeitos graves e uma perda gradual da humanidade.</p>
+                        <ul class="text-xs space-y-2 opacity-80 list-disc pl-4">
+                            <li>Vampiro / Lobisomem</li>
+                            <li>Serafim / Lich</li>
+                            <li>Licantropo / Aberração</li>
+                        </ul>
+                    </div>
+                    <div class="content-card p-8">
+                        <h3 class="text-2xl mb-4 red-accent">Sangromancia</h3>
+                        <p class="text-sm leading-relaxed">Magia de Sangue é comum para quem busca poder rápido. Exige sacrifícios de essência vital para potenciar feitiços, tornando o conjurador tão perigoso quanto o monstro que ele caça.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="content-card p-8">
+                        <h3 class="text-2xl mb-4 red-accent">Antecedentes Avançados</h3>
+                        <p class="text-sm leading-relaxed mb-4">O teu lugar na sociedade importa. Podes ser um Inquisidor oficial, um Líder de Culto ou um Mercador influente, com recursos que afetam diretamente a narrativa e a política.</p>
+                    </div>
+                    <div class="content-card p-8 bg-red-950/20">
+                        <h3 class="text-2xl mb-4 red-accent">Conselhos de Sobrevivência</h3>
+                        <ol class="text-xs space-y-3 font-bold uppercase tracking-wide">
+                            <li>1. Não sejas o "Herói Brilhante".</li>
+                            <li>2. Gere os teus recursos com obsessão.</li>
+                            <li>3. A magia tem consequências sociais fatais.</li>
+                            <li>4. A morte é um companheiro constante.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: RECURSOS -->
+        <section id="recursos" class="hidden">
+            <h2 class="text-4xl mb-12 text-center">Biblioteca de Referência</h2>
+            <div class="content-card p-12 text-center max-w-2xl mx-auto">
+                <p class="mb-8 opacity-70 italic">Links externos para consulta de regras, itens mágicos e bestiário.</p>
+                <div class="grid gap-4">
+                    <a href="https://5e.tools/book.html#ghpg" target="_blank" class="block p-4 border border-red-800 hover:bg-red-900 transition-all font-bold">Guia do Jogador 2014</a>
+                    <a href="https://5e.tools/book.html#grimhollowpg24" target="_blank" class="block p-4 border border-red-800 hover:bg-red-900 transition-all font-bold">Guia do Jogador 2024</a>
+                    <a href="https://5e.tools/book.html#gh" target="_blank" class="block p-4 border border-red-800 hover:bg-red-900 transition-all font-bold">Guia de Campanha 2014</a>
+                    <a href="https://5e.tools/book.html#grimhollowcg24" target="_blank" class="block p-4 border border-red-800 hover:bg-red-900 transition-all font-bold">Guia de Campanha 2024</a>
+                    <a href="https://5e.tools/book.html#ghmg" target="_blank" class="block p-4 border border-red-800 hover:bg-red-900 transition-all font-bold">Grimório de Monstros 2014</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 bg-black border-t border-red-900/40 text-center relative z-10">
+        <p class="italic opacity-60 text-lg">"Vós que entrais, abandonai toda a esperança."</p>
+        <div class="mt-6 flex flex-col md:flex-row justify-center gap-2 md:gap-6 opacity-40 text-xs">
+            <span>Caio Tome</span>
+            <span class="hidden md:inline">&bull;</span>
+            <span>Dark Fantasy RPG</span>
+            <span class="hidden md:inline">&bull;</span>
+            <span>Estética Gótica</span>
+            <span class="hidden md:inline">&bull;</span>
+            <span>2024</span>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(sec => {
+                sec.classList.add('hidden');
+                sec.classList.remove('section-enter');
+            });
+
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            const target = document.getElementById(id);
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('section-enter');
+            }
+
+            const activeNav = document.getElementById('nav-' + id);
+            if (activeNav) activeNav.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Update URL hash without jumping
+            history.pushState(null, null, '#' + id);
+        }
+
+        // Handle browser back/forward and initial load
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else {
+                showSection('inicio');
+            }
+        });
+
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            }
+        });
+    </script>
+</body>
+</html>
