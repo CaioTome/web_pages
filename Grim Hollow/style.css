@@ -1,0 +1,138 @@
+:root {
+    --blood-red: #880000;
+    --bright-red: #ff3333;
+    --deep-black: #0a0a0a;
+    --parchment: #e0e0e0;
+}
+
+body {
+    background-color: var(--deep-black);
+    color: var(--parchment);
+    font-family: 'Almendra', serif;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'MedievalSharp', cursive;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gothic-title {
+    font-family: 'Uncial Antiqua', serif;
+    color: #ff0000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ff0000;
+    border-bottom-color: #880000;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+.content-card,
+.image-card {
+    background: linear-gradient(145deg, #121212, #050505);
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.content-card::before,
+.image-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(136, 0, 0, 0.2);
+    pointer-events: none;
+    margin: 10px;
+    z-index: 5;
+}
+
+.blood-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
+    margin: 2rem 0;
+}
+
+.custom-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #880000;
+}
+
+.section-enter {
+    animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.red-accent {
+    color: var(--bright-red);
+}
+
+.faction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.search-bar {
+    background: #000;
+    border: 1px solid var(--blood-red);
+    color: white;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+    font-family: 'Almendra', serif;
+}
+
+/* ESTILO RAIVO SOLICITADO */
+.raevo-card-special {
+    background: white !important;
+    color: black !important;
+    border-left: 4px solid var(--blood-red);
+}
+
+.raevo-card-special::before {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.raevo-card-special h3 {
+    color: red !important;
+}
