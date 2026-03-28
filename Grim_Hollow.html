@@ -26,7 +26,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grim Hollow</title>
+    <title>Grim Hollow - Guia de Introdução</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,9 +142,20 @@
             position: relative;
         }
 
-        .map-border {
-            border: 4px solid var(--blood-red);
-            outline: 2px solid #222;
+        /* Moldura do Mapa: Linha interior grossa e exterior fina */
+        .map-frame-outer {
+            border: 1px solid var(--blood-red); /* Linha exterior fina */
+            padding: 4px;
+            display: block;
+            width: 100%;
+            background-color: #000;
+        }
+
+        .map-frame-inner {
+            border: 6px solid var(--blood-red); /* Linha interior grossa */
+            display: block;
+            width: 100%;
+            overflow: hidden;
         }
         
         .faction-grid {
@@ -209,8 +220,10 @@
             <!-- MAP SECTION -->
             <div class="mb-16 text-center">
                 <h2 class="text-2xl mb-6 font-bold">Mapa de Etharis</h2>
-                <div class="inline-block map-border shadow-2xl overflow-hidden">
-                    <img src="Etharis Mapa Mundo.webp" alt="Mapa de Etharis" class="max-w-full h-auto block opacity-90 hover:opacity-100 transition-opacity duration-500">
+                <div class="map-frame-outer shadow-2xl">
+                    <div class="map-frame-inner">
+                        <img src="Etharis Mapa Mundo.jpg" alt="Mapa de Etharis" class="w-full h-auto block opacity-90 hover:opacity-100 transition-opacity duration-500">
+                    </div>
                 </div>
             </div>
 
@@ -220,7 +233,7 @@
                     <div class="grid sm:grid-cols-2 gap-8">
                         <div>
                             <h3 class="red-accent mb-2">Escolhas Difíceis</h3>
-                            <p class="text-sm opacity-80 leading-relaxed">Frequentemente, não existe uma "escolha certa". Podes ter de escolher entre salvar inocentes ou derrotar um mal maior, comprometendo os teus valores.</p>
+                            <p class="text-sm opacity-80 leading-relaxed">Frequentemente, não existe uma "choice certa". Podes ter de escolher entre salvar inocentes ou derrotar um mal maior, comprometendo os teus valores.</p>
                         </div>
                         <div>
                             <h3 class="red-accent mb-2">Sobrevivência</h3>
@@ -258,7 +271,7 @@
                             <tr>
                                 <td class="font-bold red-accent">Império de Bürach</td>
                                 <td>Gnóstico / Político</td>
-                                <td class="text-sm">Antigo Império em declínio, consumida pela Peste de Maligant e deuses mortos.</td>
+                                <td class="text-sm">Utopia em declínio, consumida pela Peste de Maligant e deuses mortos.</td>
                             </tr>
                             <tr>
                                 <td class="font-bold red-accent">Ostoya</td>
@@ -288,8 +301,8 @@
 
         <!-- SECTION: OSTOYA DETALHADO -->
         <section id="ostoya" class="hidden">
-            <h2 class="text-4xl mb-2 text-center">Ostoya</h2>
-            <p class="text-center text-red-500 italic mb-12">O Império da Noite Eterna</p>
+            <h2 class="text-4xl mb-2 text-center">O Império da Noite Eterna</h2>
+            <p class="text-center text-red-500 italic mb-12">A terra que nunca viu o sol nascer.</p>
             
             <div class="space-y-12">
                 <div class="content-card p-8">
