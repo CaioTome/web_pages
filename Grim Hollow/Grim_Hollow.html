@@ -486,50 +486,91 @@
         <section id="linhagens" class="hidden">
             <header class="text-center mb-12">
                 <h2 class="text-4xl mb-2 text-white font-bold">Linhagens Vampíricas</h2>
-                <div class="image-card p-2 mb-8">
-                    <img src="https://raw.githubusercontent.com/TheGiddyLimit/homebrew-img/main/img/GrimHollowCG24/027-04-003.ostoyan-slaughter.webp"
-                        alt="[Linhagens]" class="w-full h-auto block opacity-80">
-                </div>
+                <p class="text-red-600 italic">As diferentes faces da maldição eterna</p>
+                <div class="blood-divider"></div>
             </header>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">Soman</h3>
-                    <p class="text-sm leading-relaxed mb-4">Reivindicam ser seres divinos destinados a governar e ser
-                        servidos. Acreditam que a maldição sanguínea começou do sangue de um deus da morte, tornando-os
-                        os seus serafins imortais. Os Soman tendem a vestir-se luxuosamente e bebem sangue de cálices de
-                        vinho. Manipulam os mortais enquanto fingem ser soberanos benevolentes.</p>
+            <div class="flex flex-col md:flex-row gap-8 min-h-[500px]">
+                <!-- Menu Interativo Lateral -->
+                <div class="w-full md:w-1/4 flex flex-col gap-2">
+                    <button onclick="showLineage('soman')" class="lineage-link active p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm" id="btn-soman">Soman</button>
+                    <button onclick="showLineage('upyr')" class="lineage-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm" id="btn-upyr">Upyr</button>
+                    <button onclick="showLineage('fzeg')" class="lineage-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm" id="btn-fzeg">Fzeg</button>
+                    <button onclick="showLineage('strigoi')" class="lineage-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm" id="btn-strigoi">Strigoi</button>
+                    <button onclick="showLineage('ecoukrylo')" class="lineage-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm" id="btn-ecoukrylo">Ecoukrylo</button>
                 </div>
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">Upyr</h3>
-                    <p class="text-sm leading-relaxed mb-4">Acreditam ser a linhagem mais antiga, tendo abandonado a sua
-                        humanidade e qualquer pretensão mortal. Os seus corpos curvados são a própria imagem de um
-                        cadáver vivo. Repousam em caixões cheios de terra da sua pátria. Para os Upyr, não há intrigas;
-                        há apenas a sede. Eles pastoreiam os mortais como um rebanho.</p>
-                </div>
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">Fzeg</h3>
-                    <p class="text-sm leading-relaxed mb-4">Uma aliança biológica profana: a maldição da licantropia e o
-                        dom do vampirismo combinam-se para se tornarem o que é conhecido como um fzeg. A força feroz dos
-                        lobisomens une-se horrivelmente à sede de sangue incessante. São os mais letais fisicamente
-                        devido às suas garras cortantes e mordida sugadora.</p>
-                </div>
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">Strigoi</h3>
-                    <p class="text-sm leading-relaxed mb-4">Criaturas pálidas e esquálidas. Os seus olhos saltam de
-                        feições estreitas sobre um sorriso de presas pontiagudas. São predadores noturnos inigualáveis,
-                        perseguindo presas a partir de tetos de cavernas ou sob pontes. Alimentam-se de sangue, carne e
-                        osso, deixando vítimas mutiladas.</p>
-                </div>
-                <div class="content-card p-8 md:col-span-2 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">Ecoukrylo</h3>
-                    <p class="text-sm leading-relaxed mb-4">Os ecoukrylo são vampiros de Ostoya com aparência e
-                        instintos mais próximos aos de morcegos monstruosos do que humanos. Possuem sentidos aguçados
-                        para caçar na escuridão total e voam com asas de couro. Apesar de exibirem comportamentos
-                        bizarros e obsessivos, são
-                        metamorfos astutos que utilizam disfarces para esconder sua natureza bestial e se infiltrar
-                        entre a nobreza.
-                    </p>
+
+                <!-- Área de Conteúdo (Lado Direito) -->
+                <div class="w-full md:w-3/4">
+                    <div id="lineage-content">
+                        <!-- Soman (Visível por padrão) -->
+                        <div id="lineage-soman" class="lineage-detail section-enter">
+                            <div class="image-card p-2 mb-6">
+                                <img src="Imagens/Soman.webp" alt="Soman" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Soman</h3>
+                                <p class="leading-relaxed">Reivindicam ser seres divinos destinados a governar e ser servidos. Acreditam que a maldição sanguínea começou do sangue de um deus da morte, tornando-os os seus serafins imortais. Os Soman tendem a vestir-se luxuosamente e bebem sangue de cálices de vinho. Manipulam os mortais enquanto fingem ser soberanos benevolentes.</p>
+                            </div>
+                        </div>
+
+                        <!-- Upyr -->
+                        <div id="lineage-upyr" class="lineage-detail hidden">
+                            <div class="image-card p-2 mb-6">
+                                <img src="Imagens/Upyr.png" alt="Upyr" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Upyr</h3>
+                                <p class="leading-relaxed">Acreditam ser a linhagem mais antiga, tendo abandonado a sua humanidade e qualquer pretensão mortal. Os seus corpos curvados são a própria imagem de um cadáver vivo. Repousam em caixões cheios de terra da sua pátria. Para os Upyr, não há intrigas; há apenas a sede. Eles pastoreiam os mortais como um rebanho.</p>
+                            </div>
+                        </div>
+
+                        <!-- Fzeg -->
+                        <div id="lineage-fzeg" class="lineage-detail hidden">
+                            <!-- Seleção de Forma -->
+                            <div class="flex gap-4 mb-6">
+                                <button onclick="toggleFzegForm('base')" id="btn-fzeg-base" class="px-8 py-4 border border-red-900/50 uppercase text-sm font-bold tracking-widest transition-all bg-red-900/40 border-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]">Fzeg</button>
+                                <button onclick="toggleFzegForm('alfa')" id="btn-fzeg-alfa" class="px-8 py-4 border border-red-900/50 uppercase text-sm font-bold tracking-widest transition-all">Fzeg Alfa</button>
+                            </div>
+
+                            <!-- Imagem: Forma Base -->
+                            <div id="fzeg-img-base" class="image-card p-2 mb-6">
+                                <img src="Imagens/Alcateia de Fzegs.webp" alt="Fzeg" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+
+                            <!-- Imagem: Forma Alfa (Escondida inicialmente) -->
+                            <div id="fzeg-img-alfa" class="image-card p-2 mb-6 hidden">
+                                <img src="Imagens/Fzeg Alfa.png" alt="Fzeg Alfa" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Fzeg</h3>
+                                <p class="leading-relaxed">Uma aliança biológica profana: a maldição da licantropia e o dom do vampirismo combinam-se para se tornarem o que é conhecido como um fzeg. A força feroz dos lobisomens une-se horrivelmente à sede de sangue incessante. São os mais letais fisicamente devido às suas garras cortantes e mordida sugadora.</p>
+                            </div>
+                        </div>
+
+                        <!-- Strigoi -->
+                        <div id="lineage-strigoi" class="lineage-detail hidden">
+                            <div class="image-card p-2 mb-6">
+                                <img src="Imagens/Strigoi (1).webp" alt="Strigoi" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Strigoi</h3>
+                                <p class="leading-relaxed">Criaturas pálidas e esquálidas. Os seus olhos saltam de feições estreitas sobre um sorriso de presas pontiagudas. São predadores noturnos inigualáveis, perseguindo presas a partir de tetos de cavernas ou sob pontes. Alimentam-se de sangue, carne e osso, deixando vítimas mutiladas.</p>
+                            </div>
+                        </div>
+
+                        <!-- Ecoukrylo -->
+                        <div id="lineage-ecoukrylo" class="lineage-detail hidden">
+                            <div class="image-card p-2 mb-6">
+                                <img src="Imagens/Ecoukrylo.webp" alt="Ecoukrylo" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Ecoukrylo</h3>
+                                <p class="leading-relaxed">Os ecoukrylo são vampiros de Ostoya com aparência e instintos mais próximos aos de morcegos monstruosos do que humanos. Possuem sentidos aguçados para caçar na escuridão total e voam com asas de couro. Apesar de exibirem comportamentos bizarros e obsessivos, são metamorfos astutos que utilizam disfarces para esconder sua natureza bestial e se infiltrar entre a nobreza.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
