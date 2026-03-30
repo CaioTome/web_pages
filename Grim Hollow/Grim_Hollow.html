@@ -160,87 +160,176 @@
             </header>
 
             <div class="content-card p-8 mb-12">
-                <p class="leading-relaxed mb-4">Etharis é um vasto continente ocupado por impérios e reinos ancestrais.
-                    As culturas são diversas e profundamente enraizadas. Cada nação foi moldada pelo seu povo, história,
-                    grupos de poder, relação com a magia, eventos cataclísmicos e soberanos vizinhos.</p>
-                <p class="leading-relaxed">Nenhum reino é singular na sua cultura ou valores. Cada um representa um
-                    género diferente de fantasia sombria e horror. Abaixo, fornecemos snapshots temáticos destes reinos.
-                </p>
+                <p class="leading-relaxed mb-4">Etharis é um vasto continente ocupado por impérios e antigos reinos. As
+                    culturas são diversas e profundamente enraizadas. Cada nação foi moldada por seu povo, sua história,
+                    seus grupos de poder, sua relação com a magia, eventos cataclísmicos e soberanos vizinhos.</p>
+                <p class="leading-relaxed mb-4">Nenhum reino é singular em sua cultura ou valores. Cada um representa um
+                    gênero diferente de fantasia sombria e terror e, portanto, diferentes temas são melhor explorados em
+                    cada um deles. Uma única região pode abrigar uma campanha inteira, ou você pode vivenciá-las todas
+                    através de suas aventuras viajando pelo continente.</p>
+                <p class="leading-relaxed mb-4">A história, a cultura e os temas de cada região são explorados em
+                    profundidade neste livro. Abaixo, apresentamos pequenos vislumbres desses universos. Não há uma
+                    ordem correta para vivenciá-los, basta começar por onde sua inspiração o levar.</p>
             </div>
 
             <div class="space-y-12">
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">O Império de Bürach</h3>
-                    <p class="text-sm leading-relaxed mb-4">Outrora um farol de civilização, o Império de Bürach agora
-                        desmorona e apodrece. Histórias de horror cósmico encaixam-se perfeitamente aqui, onde as
-                        esperanças de um amanhã melhor são ofuscadas por um destino inevitável. Uma sombra colossal
-                        retorce e corrompe a terra ao seu redor. Este monstro foi visto por muitos, mas nunca
-                        verdadeiramente compreendido, pois é tanto um arquétipo quanto um ser mortal.</p>
-                    <p class="text-sm leading-relaxed mb-4">A corrupção política e social é espelhada através de magia
-                        mutativa. O imperialismo que tornou Bürach forte levou a um desrespeito pela alma e sofrimento
-                        alheio. Quer o fim venha por guerra, rebelião ou pragas, o império testemunha os seus dias
-                        finais.</p>
+                <!-- O Império Bürach -->
+                <div class="content-card border-l-4 border-red-800">
+                    <button onclick="toggleAccordion(this)"
+                        class="w-full text-left p-8 flex justify-between items-center group focus:outline-none">
+                        <h3 class="text-2xl red-accent font-bold uppercase pointer-events-none">O Império Bürach</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 pointer-events-none opacity-50 group-hover:opacity-100"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-8">
+                        <div class="pb-8 space-y-4">
+                            <p class="text-sm leading-relaxed">Outrora um farol da civilização que estendia seu
+                                território a todos os reinos, o Império Bürach desmorona e apodrece, agarrando-se agora
+                                às suas províncias centrais como um velho leão devastado por uma vida de feridas e
+                                doenças. Embora ainda formidável em riqueza e poder, aqueles que vivem dentro do império
+                                pressentem diariamente que o fim se aproxima</p>
+                            <p class="text-sm leading-relaxed">Histórias de horror cósmico se encaixam perfeitamente no
+                                Império Bürach, onde as esperanças de um amanhã melhor são obscurecidas por uma ruína
+                                iminente e inevitável. Uma sombra assombra o Império Bürach, uma criatura de tamanho
+                                colossal cuja mera presença distorce e corrompe a terra ao seu redor. Essa besta foi
+                                vista por muitos, mas nunca verdadeiramente vista, pois é tanto um arquétipo quanto um
+                                ser mortal. Mas os horrores que surgem em seu rastro são inegáveis.</p>
+                            <p class="text-sm leading-relaxed">As províncias que compõem os remanescentes do Império
+                                Bürach testemunham o iminente colapso de sua liderança e sociedade, e seus líderes se
+                                posicionam para se beneficiar desse colapso — e talvez até mesmo busquem acelerá-lo.
+                                Seja por meio de guerra, rebelião, doença ou cultos a deuses estranhos, o império pode
+                                estar testemunhando seus últimos dias.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">O Reino de Charneault</h3>
-                    <p class="text-sm leading-relaxed mb-4">Um reino de beleza esmeralda protegido pelo Grove Maze.
-                        Contudo, esta beleza é meramente uma ilusão. As histórias aqui são narrativas caprichosas que
-                        disfarçam a verdadeira brutalidade e perigo no seu núcleo. Fey caprichosos, adorados e temidos,
-                        realizam atos de crueldade indescritíveis sob uma névoa corruptora apenas para ver o que
-                        acontece.</p>
+                <!-- O Reino de Charneault -->
+                <div class="content-card border-l-4 border-red-800">
+                    <button onclick="toggleAccordion(this)"
+                        class="w-full text-left p-8 flex justify-between items-center group focus:outline-none">
+                        <h3 class="text-2xl red-accent font-bold uppercase pointer-events-none">O Reino de Charneault
+                        </h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 pointer-events-none opacity-50 group-hover:opacity-100"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-8">
+                        <div class="pb-8 space-y-4">
+                            <p class="text-sm leading-relaxed">O Reino de Charneault é um reino de beleza incomparável.
+                                Escondido atrás da floresta mística do Labirinto do Bosque, encontra-se uma terra de
+                                colinas verdejantes, vales envoltos em névoa e inúmeros rios caudalosos. Charneault é
+                                patrulhado por cavaleiros virtuosos. Uma profunda conexão com a natureza está
+                                intrinsecamente ligada à cultura de Charneault, herdada dos elfos que primeiro se
+                                estabeleceram nessas terras idílicas.</p>
+                            <p class="text-sm leading-relaxed">No entanto, toda essa beleza não passa de uma ilusão. As
+                                histórias contadas no Reino de Charneault são semelhantes aos contos de fadas infantis —
+                                narrativas fantasiosas que disfarçam a verdadeira brutalidade e o perigo em seu âmago.
+                                Os contos de fadas que estão no coração de Charneault são muito mais sombrios e
+                                sinistros.</p>
+                            <p class="text-sm leading-relaxed">Seres feéricos caprichosos, adorados por um lado e
+                                temidos por outro, tomam o que querem sem medo de represálias. Uma névoa corruptora
+                                encobre suas atividades e dizima tudo o que toca, sem fim à vista. Os contos e aventuras
+                                de Charneault são verdadeiros pesadelos — o horror sobrenatural de criaturas feéricas
+                                amorais cometendo atos indescritíveis de crueldade e dor contra criaturas mortais,
+                                apenas para ver o que acontece.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">As Províncias Castinellas</h3>
-                    <p class="text-sm leading-relaxed mb-4">A fé unifica Castinella. Fervorosamente devotos aos
-                        Arquiserafins, eles reconhecem os males da magia arcana e fazem tudo para os impedir. É um reino
-                        onde a religião transformou a população em monstros por direito próprio. A ignorância e a
-                        inquisição criam campanhas de horror psicológico, onde basta uma acusação para destruir uma vida
-                        inocente.</p>
+                <!-- As Províncias Castinellas -->
+                <div class="content-card border-l-4 border-red-800">
+                    <button onclick="toggleAccordion(this)"
+                        class="w-full text-left p-8 flex justify-between items-center group focus:outline-none">
+                        <h3 class="text-2xl red-accent font-bold uppercase pointer-events-none">As Províncias
+                            Castinellas</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 pointer-events-none opacity-50 group-hover:opacity-100"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-8">
+                        <div class="pb-8 space-y-4">
+                            <p class="text-sm leading-relaxed">A fé une as Províncias de Castinella . Fervorosamente
+                                devotados aos éditos dos Arquiserafins, os habitantes de Castinella reconhecem os males
+                                que podem ser cometidos por meio de atos de magia arcana — e fazem tudo ao seu alcance
+                                para impedir que tais atos aconteçam. Se algumas pessoas inocentes ou de bom coração
+                                forem mortas ou torturadas no processo, isso é considerado um pequeno preço a pagar em
+                                nome da segurança.</p>
+                            <p class="text-sm leading-relaxed">Castinella é um reino onde a religião transformou a
+                                população, antes bem-intencionada, em verdadeiros monstros. A ignorância, a
+                                desinformação e a devoção cega da Inquisição Arcanista e seus seguidores desencadeiam
+                                campanhas de terror psicológico, onde basta uma acusação infundada para transformar a
+                                vida de uma pessoa inocente em um pesadelo. E a presença de monstros reais que precisam
+                                ser combatidos significa escolher entre usar a magia que mata monstros ou esconder a
+                                magia que o levará à morte como um deles.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">Os Clãs de Valikan</h3>
-                    <p class="text-sm leading-relaxed mb-4">No norte gelado, o povo deve suportar um ambiente implacável
-                        e conflitos de sangue. A honra e a bravura convivem com a sobrevivência a qualquer custo,
-                        incluindo raides egoístas e sacrifícios humanos. O clima ártico e o fogo-frio mágico fundem o
-                        horror natural e sobrenatural numa realidade sombria.</p>
+                <!-- Os Clãs de Valikan -->
+                <div class="content-card border-l-4 border-red-800">
+                    <button onclick="toggleAccordion(this)"
+                        class="w-full text-left p-8 flex justify-between items-center group focus:outline-none">
+                        <h3 class="text-2xl red-accent font-bold uppercase pointer-events-none">Os Clãs de Valikan</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 pointer-events-none opacity-50 group-hover:opacity-100"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-8">
+                        <div class="pb-8 space-y-4">
+                            <p class="text-sm leading-relaxed">Bem ao norte, na extremidade congelada do continente,
+                                encontra-se a terra natal dos Clãs Valikanos . Diariamente, o povo resistente que habita
+                                Valika precisa suportar o ambiente implacável, elementais enfurecidos e os conflitos
+                                sangrentos que irrompem entre os diversos clãs.</p>
+                            <p class="text-sm leading-relaxed">A vida é curta entre os Grandes Clãs. Contudo, o legado
+                                de grandes heróis e chefes de clã perdura através das gerações, por meio das sagas que
+                                os Valikans contam sobre sua gloriosa história. Assim como as diversas estações do ano,
+                                a honrada e habilidosa bravura dos Valikans é uma das faces da mesma moeda. A outra,
+                                como o rigoroso inverno, é a sobrevivência a qualquer custo, incluindo atos terríveis e
+                                egoístas para garantir a sobrevivência do clã. Esses atos incluem saquear assentamentos
+                                e capturar prisioneiros — alguns dos quais podem ser sacrificados.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">Liesech</h3>
-                    <p class="text-sm leading-relaxed mb-4">Liesech é o caldeirão pútrido onde a Peste de Maligant
-                        nasceu, focando no horror corporal e na corrupção da cura. Liesech é um porto perfeito,
-                        acessível principalmente por barco. As águas abertas da Baía da Mordida e a crista de mar
-                        profundo permitem que as embarcações ancorem mais perto da costa. Navios em trânsito podem
-                        contornar o litoral em mau tempo, mas os capitães devem estar vigilantes. As correntes
-                        turbulentas das águas circundantes são conhecidas por desviar embarcações para rochedos
-                        marinhos, despertando monstros marinhos que rumores dizem habitar na área próxima chamada "Olho
-                        do Mar".</p>
-                    <p class="text-sm leading-relaxed">Os muitos canais e valas de Liesech mantêm as ondas das marés
-                        sob controlo. Os acidentes geográficos cercam os ventos costeiros, mantendo as temperaturas
-                        amenas e quentes. Tempestades marítimas em declínio nos períodos mais quentes trazem chuvas
-                        leves que mal sustentam a agricultura. Estranhos opinam que a escassa pluviosidade se deve à
-                        névoa que paira sobre a cidade. Os locais simplesmente encolhem os ombros quando questionados.
-                    </p>
-                </div>
-
-                <div class="content-card p-8 border-l-4 border-red-800">
-                    <h3 class="text-2xl mb-4 red-accent font-bold uppercase">Morencia</h3>
-                    <p class="text-sm leading-relaxed mb-4">Morencia sofre de uma doença social: a ganância. É um centro
-                        bancário onde sorrisos escondem punhais envenenados e cultos secretos compram poder com moedas.
-                        A
-                        cidade-estado de Morencia está localizada em pequenas ilhas no Golfo dos Leões, a oeste das
-                        Províncias Castinellas e a leste do Reino de Charneault. Morencia manteve a sua independência
-                        desde a sua fundação, resistindo ao poder do Império de Bürach e, mais recentemente, das
-                        Províncias Castinellas.</p>
-                    <p class="text-sm leading-relaxed mb-4">A característica topográfica mais importante que permitiu
-                        esta defesa são os Recifes Nebulosos. Um fenómeno sobrenatural que coloca todas as embarcações
-                        em risco, esta barreira impediu quase todos os ataques navais a Morencia.</p>
-                    <p class="text-sm leading-relaxed">As características protetoras de Morencia tornam-na uma potência
-                        náutica e, portanto, económica. Poucos mercadores podem afirmar ser atores internacionais sem
-                        que as suas mercadorias interajam de alguma forma com Morencia.</p>
+                <!-- Liesech e Morencia -->
+                <div class="content-card border-l-4 border-red-800">
+                    <button onclick="toggleAccordion(this)"
+                        class="w-full text-left p-8 flex justify-between items-center group focus:outline-none">
+                        <h3 class="text-2xl red-accent font-bold uppercase pointer-events-none">Liesech e Morencia</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 pointer-events-none opacity-50 group-hover:opacity-100"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-8">
+                        <div class="pb-8 space-y-4">
+                            <p class="text-sm leading-relaxed">As duas cidades-estado de Liesech e Morencia não são
+                                nações plenas, mas são, no entanto, distintas das demais áreas em termos temáticos,
+                                geográficos, políticos e sociais. Cada uma traz seu próprio sabor e sua própria
+                                atmosfera de horror para uma campanha.</p>
+                            <p class="text-sm leading-relaxed">Liesech é o caldeirão pútrido de doenças onde se originou
+                                a Varíola Chorosa. Seu povo tenta manter seu modo de vida mercantil enquanto seus
+                                amigos, familiares, colegas e até mesmo inimigos sucumbem à temida doença. Embora a
+                                doença tenha uma causa sobrenatural, seus efeitos são evidentes. O horror corporal e a
+                                corrupção inerentes a esse gênero não se manifestam apenas na doença em si, mas também
+                                nas ações, por vezes questionáveis, daqueles que tentam curá-la.</p>
+                            <p class="text-sm leading-relaxed">A doença de Morencia é social, não médica. Os gananciosos
+                                e ardilosos habitantes deste centro bancário e comercial sorriem e estendem uma mão
+                                enquanto a outra segura uma adaga envenenada. A fachada vibrante e efusiva de Morencia
+                                esconde segredos obscuros e cultos secretos que fariam qualquer coisa por uma réstia de
+                                poder e mais uma Moeda de Ouro.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -594,7 +683,15 @@
                                     afiadas e mordida sanguinária, os fzeg não têm dificuldade em caçar; seu problema
                                     reside em deter seus oponentes.</p>
 
-                                <p class="leading-relaxed">No topo dessa linhagem surgem os Fzeg Alfas, variações raras e especialmente perigosas que ostentam a aparência de morcegos gigantescos do tamanho de uma carroça. Completamente irracionais, essas bestas agem por puro instinto predatório, alimentando-se de qualquer ser vivo, desde skaa desavisados até dragões jovens. A ameaça de um Alfa é potencializada por sua fisiologia assimilativa: ao consumir o sangue de criaturas poderosas, ele pode herdar habilidades únicas de suas vítimas, como resistências elementais ou até mesmo a capacidade de manifestar magias por puro instinto, tornando-se um predador em constante evolução.
+                                <p class="leading-relaxed">No topo dessa linhagem surgem os Fzeg Alfas, variações raras
+                                    e especialmente perigosas que ostentam a aparência de morcegos gigantescos do
+                                    tamanho de uma carroça. Completamente irracionais, essas bestas agem por puro
+                                    instinto predatório, alimentando-se de qualquer ser vivo, desde skaa desavisados até
+                                    dragões jovens. A ameaça de um Alfa é potencializada por sua fisiologia
+                                    assimilativa: ao consumir o sangue de criaturas poderosas, ele pode herdar
+                                    habilidades únicas de suas vítimas, como resistências elementais ou até mesmo a
+                                    capacidade de manifestar magias por puro instinto, tornando-se um predador em
+                                    constante evolução.
                                 </p>
                             </div>
                         </div>
@@ -829,6 +926,23 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+
+            // Verifica se está aberto
+            const isOpen = content.style.maxHeight;
+
+            if (isOpen) {
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
 </body>
 
 </html>
