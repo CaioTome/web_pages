@@ -986,23 +986,25 @@
         <!-- Personagens Importantes -->
         <section id="pessoas" class="hidden">
             <header class="text-center mb-12">
-                <h2 class="text-4xl mb-2 text-white font-bold">Pessoas importantes de Ostoya</h2>
+                <h2 class="text-4xl mb-2 text-white font-bold">Pessoas Importantes de Ostoya</h2>
                 <div class="blood-divider"></div>
             </header>
 
             <div class="flex flex-col md:flex-row gap-8 min-h-[500px]">
                 <!-- Menu Interativo Lateral -->
                 <div class="w-full md:w-1/4 flex flex-col gap-2">
-                    <button onclick="showLineage('soman')"
-                        class="lineage-link active p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
-                        id="btn-soman">Soman</button>
+                    <input type="text" id="person-search" onkeyup="filterPeople()" placeholder="Procurar pessoa..."
+                        class="search-bar mb-4 !w-full">
+                    <button onclick="showPerson('soman')"
+                        class="person-link active p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
+                        id="person-btn-soman">Soman</button>
                 </div>
 
                 <!-- Área de Conteúdo (Lado Direito) -->
                 <div class="w-full md:w-3/4">
-                    <div id="lineage-content">
+                    <div id="person-content">
                         <!-- Soman (Visível por padrão) -->
-                        <div id="lineage-soman" class="lineage-detail section-enter">
+                        <div id="person-card-soman" class="person-detail section-enter">
                             <div class="image-card p-2 mb-6">
                                 <img src="Imagens/Soman.webp" alt="Soman"
                                     class="max-h-[500px] w-auto mx-auto block opacity-90">

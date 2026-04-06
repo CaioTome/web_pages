@@ -42,6 +42,32 @@ function showLineage(id) {
     if (activeBtn) activeBtn.classList.add('active', 'border-red-600', 'bg-red-900/20');
 }
 
+function showPerson(id) {
+    const details = document.querySelectorAll('.person-detail');
+    const buttons = document.querySelectorAll('.person-link');
+    
+    details.forEach(detail => {
+        detail.classList.add('hidden');
+        detail.classList.remove('section-enter');
+    });
+    buttons.forEach(btn => btn.classList.remove('active', 'border-red-600', 'bg-red-900/20'));
+
+    const target = document.getElementById('person-card-' + id);
+    if (target) { target.classList.remove('hidden'); target.classList.add('section-enter'); }
+    const activeBtn = document.getElementById('person-btn-' + id);
+    if (activeBtn) activeBtn.classList.add('active', 'border-red-600', 'bg-red-900/20');
+}
+
+function filterPeople() {
+    const input = document.getElementById('person-search');
+    const filter = input.value.toLowerCase();
+    const buttons = document.getElementsByClassName('person-link');
+    Array.from(buttons).forEach(btn => {
+        const text = btn.innerText.toLowerCase();
+        btn.style.display = text.includes(filter) ? "" : "none";
+    });
+}
+
 function toggleFzegForm(form) {
     const imgBase = document.getElementById('fzeg-img-base');
     const imgAlfa = document.getElementById('fzeg-img-alfa');
