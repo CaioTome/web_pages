@@ -12,9 +12,12 @@
         href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=MedievalSharp&family=Uncial+Antiqua&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Imagens/favicon.ico" type="image/x-icon">
 </head>
 
 <body class="custom-scroll">
+
+    <script src="script.js"></script>
 
     <div class="fixed inset-0 pointer-events-none opacity-5 z-0">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -25,6 +28,7 @@
         </svg>
     </div>
 
+    <!-- Barra de Navegação -->
     <nav class="fixed top-0 w-full z-50 bg-black/95 border-b border-red-900/50 backdrop-blur-lg">
         <div class="max-w-[1400px] mx-auto px-4 py-3 flex flex-col xl:flex-row justify-between items-center gap-4">
             <div class="text-2xl gothic-title cursor-pointer" onclick="showSection('inicio')">GRIM HOLLOW</div>
@@ -32,7 +36,7 @@
                 class="flex flex-wrap justify-center gap-2 md:gap-4 text-[10px] md:text-xs uppercase tracking-widest font-bold">
                 <button onclick="showSection('inicio')" class="nav-link active py-1" id="nav-inicio">O Mundo</button>
                 <button onclick="showSection('reinos')" class="nav-link py-1" id="nav-reinos">Reinos</button>
-                <button onclick="showSection('imperio')" class="nav-link py-1" id="nav-imperio">O Império
+                <button onclick="showSection('imperio')" class="nav-link py-1" id="nav-imperio">Império
                     Ostoyano</button>
                 <button onclick="showSection('necropole')" class="nav-link py-1" id="nav-necropole">Necrópole</button>
                 <button onclick="showSection('linhagens')" class="nav-link py-1" id="nav-linhagens">Linhagens
@@ -41,6 +45,7 @@
                     id="nav-fallowheart">Fallowheart</button>
                 <button onclick="showSection('malkovia')" class="nav-link py-1" id="nav-malkovia">Malkovia</button>
                 <button onclick="showSection('facoes')" class="nav-link py-1" id="nav-facoes">Facções</button>
+                <button onclick="showSection('pessoas')" class="nav-link py-1" id="nav-pessoas">Pessoas</button>
                 <button onclick="showSection('recursos')" class="nav-link py-1" id="nav-recursos">Recursos</button>
             </div>
         </div>
@@ -52,7 +57,6 @@
         <section id="inicio" class="section-enter">
             <header class="text-center mb-16">
                 <h1 class="text-5xl md:text-7xl mb-4 text-white font-bold">Etharis</h1>
-                <p class="text-red-600 italic text-2xl">Vós que entrais, abandonai toda a esperança.</p>
                 <div class="blood-divider"></div>
             </header>
 
@@ -881,7 +885,7 @@
                         comércio, tornando-a vulnerável a vigaristas e oportunistas. Nos mercados de Malkovia, tudo é
                         permitido, desde que os impostos devidos sejam pagos.</p><br>
 
-                    <p>Enquanto dezenas de pontes cruzam o Rio Turbulento ao longo de seu curso, transportando
+                    <p>Enquanto dezenas de pontes cruzam o Rio Revoltoso ao longo de seu curso, transportando
                         mercadores e viajantes de uma margem à outra, Malkovia se situa na principal via que liga Raevo
                         ao restante de Ostoya. Nada menos que sete pontes permitem o acesso de uma margem à outra do
                         rio. A cidade em si é uma rede de ruas movimentadas e vielas estreitas, repletas de pessoas que
@@ -979,6 +983,53 @@
             </div>
         </section>
 
+        <!-- Personagens Importantes -->
+        <section id="pessoas" class="hidden">
+            <header class="text-center mb-12">
+                <h2 class="text-4xl mb-2 text-white font-bold">Pessoas importantes de Ostoya</h2>
+                <div class="blood-divider"></div>
+            </header>
+
+            <div class="flex flex-col md:flex-row gap-8 min-h-[500px]">
+                <!-- Menu Interativo Lateral -->
+                <div class="w-full md:w-1/4 flex flex-col gap-2">
+                    <button onclick="showLineage('soman')"
+                        class="lineage-link active p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
+                        id="btn-soman">Soman</button>
+                </div>
+
+                <!-- Área de Conteúdo (Lado Direito) -->
+                <div class="w-full md:w-3/4">
+                    <div id="lineage-content">
+                        <!-- Soman (Visível por padrão) -->
+                        <div id="lineage-soman" class="lineage-detail section-enter">
+                            <div class="image-card p-2 mb-6">
+                                <img src="Imagens/Soman.webp" alt="Soman"
+                                    class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Soman</h3>
+                                <p class="leading-relaxed mb-4">Os vampiros Soman afirmam ser seres divinos destinados a
+                                    governar e serem servidos pelos humanoides mortais de Etharis. Eles acreditam que a
+                                    maldição sanguínea teve origem no sangue de um deus da morte, tornando-os seus
+                                    serafins imortais. Se eles realmente são descendentes de tal ser é uma questão para
+                                    filósofos e caçadores de monstros.</p>
+
+                                <p class="leading-relaxed">Os vampiros Soman costumam se vestir de forma extravagante e
+                                    beber sangue em cálices de vinho. Eles dobram os mortais aos seus caprichos através
+                                    da manipulação, enquanto fingem ser soberanos benevolentes. Sua aparência é um
+                                    equilíbrio entre graça e poder, algo frequentemente ausente em outras linhagens,
+                                    permitindo-lhes disfarçar-se de humanoides com mais facilidade do que a maioria de
+                                    seus parentes mortos-vivos.</p>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+
+
+        </section>
+
         <!-- SECÇÃO: RECURSOS -->
         <section id="recursos" class="hidden">
             <h2 class="text-4xl mb-12 text-center text-white font-bold">Biblioteca de Referência</h2>
@@ -1009,13 +1060,11 @@
         <p class="italic opacity-60 text-lg">"Vós que entrais, abandonai toda a esperança."</p>
         <div class="mt-6 flex flex-col md:flex-row justify-center gap-2 md:gap-6 opacity-40 text-xs">
             <span>Caio Tome</span>
-            <span>Dark Fantasy RPG</span>
-            <span>Estética Gótica</span>
-            <span>2024</span>
+            <span>D&D One</span>
+            <span>Grim Hollow</span>
+            <span>2026</span>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
