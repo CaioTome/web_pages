@@ -143,14 +143,12 @@
                 <div class="content-card p-8 border-t-2 border-red-700 bg-red-950/5">
                     <h3 class="text-2xl mb-4 text-white font-bold uppercase tracking-widest">Esperança Dentro da
                         Escuridão</h3>
-                    <p class="leading-relaxed text-sm italic">Apesar das circunstâncias terríveis, a esperança perdura.
+                    <p class="leading-relaxed text-sm">Apesar das circunstâncias terríveis, a esperança perdura.
                         Pode estar dispersa e assaltada por todos os lados, mas não foi extinta. Um agricultor resiste
                         contra soldados para dar tempo à família de fugir. Um mercador entrega pão a um mendigo. Um
                         paladino, o último da sua ordem, continua a sua busca para livrar o mundo de um demónio.
                         Pequenos atos de bondade e bravura destacam-se contra o fundo sombrio. Num cenário onde o bem
-                        raramente vence o mal, as vitórias duramente conquistadas merecem celebração. O segredo de uma
-                        campanha bem-sucedida é saber quando apresentar essa oportunidade de heroísmo, esse raio de luz
-                        num mundo de trevas.</p>
+                        raramente vence o mal, as vitórias duramente conquistadas merecem celebração.</p>
                 </div>
             </div>
         </section>
@@ -902,18 +900,6 @@
                         liderança sobrenatural. Mariska Király, a matriarca de Malkovia, mantém-se firme em sua posição
                         de que a cidade permanece independente. Mas seus subordinados podem ter outras ideias.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="content-card p-8">
-                        <h4 class="red-accent font-bold mb-2 uppercase">Lado Norte</h4>
-                        <p class="text-xs opacity-90 leading-relaxed">O Lado Norte favorece a rebelião, denunciando a
-                            nobreza vampírica de Ostoya como monstros sem deus.</p>
-                    </div>
-                    <div class="content-card p-8">
-                        <h4 class="red-accent font-bold mb-2 uppercase">Lado Sul</h4>
-                        <p class="text-xs opacity-90 leading-relaxed">O Lado Sul favorece a Corte, preferindo a
-                            segurança de um império unido e a força da liderança sobrenatural.</p>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -983,7 +969,7 @@
             </div>
         </section>
 
-        <!-- Personagens Importantes -->
+        <!-- SECÇÃO: PESSOAS -->
         <section id="pessoas" class="hidden">
             <header class="text-center mb-12">
                 <h2 class="text-4xl mb-2 text-white font-bold">Pessoas Importantes de Ostoya</h2>
@@ -1000,6 +986,21 @@
                         class="person-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
                         id="person-btn-matriarca-mariska-kiraly">Matriarca Mariska Király</button>
 
+                    <button onclick="showPerson('oleg-o-acougueiro')"
+                        class="person-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
+                        id="person-btn-oleg-o-acougueiro">Oleg, o Açougueiro</button>
+
+                    <button onclick="showPerson('ylana-svarog')"
+                        class="person-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
+                        id="person-btn-ylana-svarog">Ylana Svarog</button>
+
+                    <button onclick="showPerson('mariana-marilyn')"
+                        class="person-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
+                        id="person-btn-mariana-marilyn">Mariana Marilyn</button>
+
+                    <button onclick="showPerson('padre-elias')"
+                        class="person-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
+                        id="person-btn-padre-elias">Padre Elias</button>
                 </div>
 
                 <!-- Área de Conteúdo (Lado Direito) -->
@@ -1016,17 +1017,208 @@
                             <div class="content-card p-8 border-l-4 border-red-800">
                                 <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Matriarca Mariska Király</h3>
                                 <p class="leading-relaxed mb-4">
-                                    A matriarca de Malkovia, Mariska Király, mantém-se firme em sua posição de que a
-                                    cidade permanece independente.
-                                    Ela é uma figura astuta e resiliente, navegando pelas complexas políticas entre
-                                    Raevo e a Corte Carmesim.
+                                    A história de Mariska ecoa a de muitas crianças perdidas e sem nome de Malkovia.
+                                    Nascida como uma menina de rua e sobrevivendo apenas graças à astúcia e às
+                                    habilidades que desenvolveu à força, a curta vida de Mariska quase terminou quando
+                                    as águas transbordaram durante a Queda das Trevas. Um caçador de monstros chamado
+                                    Grivr a resgatou. Uma questão de estar no lugar certo, na hora certa, como ele
+                                    costumava lembrar a Mariska.
+                                </p>
+                                <p class="leading-relaxed mb-4">
+                                    Treinamento rigoroso e mutações dolorosas marcaram a jovem elfa até a idade adulta.
+                                    Ela foi moldada para se tornar uma caçadora de monstros devoradora e mortal, cuja
+                                    lenda cresceu rapidamente, e Grivr e Mariska caçavam frequentemente ao sul de
+                                    Malkovia, onde os mortos-vivos agora vagavam livremente. Esse comércio perigoso em
+                                    um reino recém-governado por vampiros custou a vida de Grivr.
+                                </p>
+
+                                <p class="leading-relaxed mb-4">
+                                    Mariska passou seus anos de meia-idade como mercenária na cidade, cobrando um preço
+                                    alto por suas habilidades especiais. Enquanto a insatisfação com o governo de
+                                    Malkovia crescia após a Queda das Trevas, a caçadora de monstros acumulou riquezas e
+                                    conexões com sindicatos, empresas e mercadores. Quando a família governante perdeu a
+                                    confiança de seu povo, Mariska desembarcou sua própria milícia em Mooreland e tomou
+                                    Malkovia para si.
+                                </p>
+
+                                <p class="leading-relaxed mb-4">
+                                    Pouco depois, ela derrubou praticamente todas as barreiras regulatórias que
+                                    limitavam o comércio, inundando a cidade com riqueza. Forjou alianças com seus
+                                    contatos para fortalecer sua milícia. Em Northside, a autoproclamada Matriarca é uma
+                                    defensora do povo que mantém os exércitos de Soma e Raevo sob controle. Em
+                                    Southside, Mariska é considerada uma tirana, que usa ameaças e violência para impor
+                                    seu regime.
+                                </p>
+
+                                <p class="leading-relaxed">
+                                    Apesar de seu sucesso em manter a independência de Malkovia, Mariska está cercada
+                                    por víboras. Aqueles que preferem entregar a cidade a Soma ou Raevo, e aqueles que
+                                    preferem ocupar o trono da matriarca, aguardam sua queda.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Oleg, o Açougueiro -->
+                        <div id="person-card-oleg-o-acougueiro" class="person-detail hidden">
+                            <div class="image-card p-2 mb-6">
+                                <img src="" alt="Oleg, o Açougueiro"
+                                    class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Oleg, o Açougueiro</h3>
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição -->
+                                    Oleg é o chefe supremo da Zona Norte de Malkovia, governando os distritos e
+                                    aplicando as leis da cidade em nome da Matriarca. Embora a ordem reine em Malkovia,
+                                    Oleg está disposto a tolerar muita coisa, contanto que os impostos municipais
+                                    continuem sendo pagos.
+                                </p>
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição adicional -->
+                                    Mais conhecido por seus amigos e inimigos como o Açougueiro, devido às suas
+                                    habilidades como caçador de monstros, a especialidade de Oleg é matar vampiros que
+                                    ousam cruzar o rio. O cinto do rancoroso está repleto de partes de corpos colhidas
+                                    de suas presas. Ao lidar com criminosos mortais, Oleg não hesita em devorar porções
+                                    que lhe causam mutações terríveis, tornando-o mais forte.
+                                </p>
+
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição adicional -->
+                                    Tendo sido treinado pela própria Matriarca, a lealdade de Oleg a Mariska nunca foi
+                                    questionada. Mas ele odeia os vampiros mais do que a ela. Tornar-se um devorador
+                                    alterou sua biologia para a de um dhampir, um fato que Oleg lamenta e detesta.
+                                </p>
+
+                                <p class="leading-relaxed">
+                                    <!-- Espaço para descrição adicional -->
+                                    Ele se encontra frequentemente em segredo com os rebeldes de Raevan e espera
+                                    dar-lhes vantagem para expandir sua influência na cidade. Caso um conflito irrompa
+                                    em Malkovia, o Açougueiro terá prazer em banhar seus machados com o sangue dos
+                                    condenados.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ylana Svarog -->
+                        <div id="person-card-ylana-svarog" class="person-detail hidden">
+                            <div class="image-card p-2 mb-6">
+                                <img src="" alt="Ylana Svarog" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Ylana Svarog</h3>
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição -->
+                                    Outrora uma aluna excepcional do Santuário da Corte dos Corvos, Ylana Svarog é
+                                    constantemente subestimada em Malkovia devido à sua estatura gnômica. Seus inimigos,
+                                    que a consideram presa fácil, são rapidamente reduzidos a cinzas ao vento.
+                                </p>
+                                <p class="leading-relaxed mb-4">
+                                    Apesar de seus talentos arcanos, Ylana nunca se sentiu à vontade na rígida
+                                    burocracia de Castalore ou no Conselho de Magos, preferindo a cultura de espírito
+                                    livre de Malkovia. Por um tempo, ela foi a maga da corte da nobreza von Dülvet. Ela
+                                    conquistou sua posição como chefe suprema de Southside ao ajudar a facilitar o golpe
+                                    de Mariska e, desde então, supervisiona o funcionamento dos mercados e bancos da
+                                    cidade.
                                 </p>
                                 <p class="leading-relaxed">
-                                    Sua liderança é crucial para a manutenção da neutralidade de Malkovia, embora seus
-                                    subordinados possam ter outras ideias sobre o futuro da cidade.
-                                    Mariska é conhecida por sua habilidade em negociações e por proteger os interesses
-                                    de Malkovia acima de tudo.
+                                    Apesar de ter chegado ao poder junto com a Matriarca, persistem rumores de que Ylana
+                                    entrou em conflito com Mariska e Oleg. A maga gnomo encontrou sua própria fonte de
+                                    riqueza e recursos negociando com delegados da Corte Carmesim e permite a
+                                    disseminação de um dogma que venera os vampiros como serafins. Permitir que essa
+                                    religiosidade cresça em Malkovia mina a autoridade de Mariska e, consequentemente, a
+                                    de Ylana na cidade. Parece improvável que a maga permitisse isso se não tivesse
+                                    certas garantias de Soma.
                                 </p>
+                            </div>
+                        </div>
+
+                        <!-- Mariana Marilyn -->
+                        <div id="person-card-mariana-marilyn" class="person-detail hidden">
+                            <div class="image-card p-2 mb-6">
+                                <img src="" alt="Mariana Marilyn" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Mariana Marilyn</h3>
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição -->
+                                    Marienne nasceu na nobreza, mas não conseguiu conter sua ambição por mais. A riqueza
+                                    a entediava, e uma sede perigosa por emoção e um olhar atento às oportunidades a
+                                    levaram a explorar a paixão pelo roubo. Pequenos furtos de outros nobres não eram
+                                    suficientes. Suas indiscrições escalaram para desfalque, até que ela foi pega e
+                                    forçada a fugir de sua antiga vida em desgraça.
+                                </p>
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição adicional -->
+                                    Recomeçando sua vida nas ruas sombrias de Malkovia, Lady Marilyn já tinha contatos
+                                    com o Sindicato Ébano e a Matriarca Király. Confidente e mediadora entre os dois,
+                                    Marienne agora é considerada a chefe do Sindicato Ébano em Malkovia e sua agente
+                                    mais poderosa em Ostoya. A cidade iluminada pelo luar é a porta de entrada mais
+                                    segura do Sindicato para o império. Sua independência protege suas atividades das
+                                    garras da Corte ou dos olhos do Conselho de Magos.
+                                </p>
+
+                                <p class="leading-relaxed">
+                                    <!-- Espaço para descrição adicional -->
+                                    Apesar de sua criação opulenta, Lady Marilyn não se deixa intimidar ou manipular
+                                    facilmente. O que lhe falta em fibra, sobra em charme e astúcia. Sua verdadeira
+                                    ocupação é um segredo bem guardado. Embora Marienne e Mariska Király finjam ter uma
+                                    amizade próxima, a Matriarca está sempre ciente da ameaça constante, caso suas
+                                    decisões atrapalhem as operações do Sindicato em Malkovia.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Padre Elias -->
+                        <div id="person-card-padre-elias" class="person-detail hidden">
+                            <div class="image-card p-2 mb-6">
+                                <img src="https://raw.githubusercontent.com/TheGiddyLimit/homebrew-img/main/img/GrimHollowCG24/047-04-019.father-elijah.webp"
+                                    alt="Padre Elias" class="max-h-[500px] w-auto mx-auto block opacity-90">
+                            </div>
+                            <div class="content-card p-8 border-l-4 border-red-800">
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Padre Elias</h3>
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição -->
+                                    Um mártir trágico. Um profeta divino. Um enganador sedento de sangue. Pai Elias é
+                                    tudo isso e muito mais, dependendo de quem for perguntado em Malkovia. Expulso dos
+                                    céus durante o Fim dos Deuses, Elias vagou por Etharis sem rumo. Sem fé. Exausto.
+                                    Isso até se tornar um vampiro.
+                                </p>
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição adicional -->
+                                    O caminho do Padre Elias agora está surpreendentemente claro. Ele é divino
+                                    novamente, um dom que lhe foi devolvido quando a maldição sanguínea escorreu por sua
+                                    garganta em filetes. Em suas próprias palavras, isso revelou a Elias uma antiga
+                                    verdade. Vampiros são serafins, nascidos de um deus sepultado nas profundezas da
+                                    Cidade Inferior , com a missão de matar os infiéis e elevar os dignos para que
+                                    conquistem a morte por completo.
+                                </p>
+
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição adicional -->
+                                    Elias fez proselitismo por toda Ostoya, encorajando seus cidadãos austeros a ter
+                                    esperança, a ansiar, a desejar a promessa da imortalidade. Mais recentemente, o Pai
+                                    estabeleceu-se no sul de Malkovia, com a intenção de trazer a Cidade Livre para o
+                                    seio da Corte Carmesim.
+                                </p>
+                                <p class="leading-relaxed mb-4">
+                                    <!-- Espaço para descrição adicional -->
+                                    Seus discursos atraem multidões que ele encanta com milagres possibilitados tanto
+                                    pelo poder do vampirismo quanto pelas faíscas minguantes de sua divindade. O Padre
+                                    Elias compõe canções, ao som das quais a congregação dança em celebração à vida e
+                                    chora diante da inevitabilidade da morte, antes de ser presenteada com comida e
+                                    dádivas trazidas das vastas terras agrícolas de Terinima .
+                                </p>
+
+                                <p class="leading-relaxed">
+                                    <!-- Espaço para descrição adicional -->
+                                    Até mesmo a nobreza de Malkovia acha o Pai fascinante. Suas promessas de poder
+                                    através da providência divina do vampirismo são inebriantes. Ele tem multidões de
+                                    seguidores em todos os distritos da cidade, ameaçando a liderança de Malkovia com
+                                    uma nova bandeira para unir seu povo. Elijah planeja fazer exatamente isso e,
+                                    talvez, em vez de doutrinar a cidade sob a influência da Corte Carmesim, ele a tome
+                                    para si. Afinal, o que é maior que um Grão-Duque? Um deus.
+                                </p>
+
                             </div>
                         </div>
                     </div>
