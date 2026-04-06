@@ -65,3 +65,19 @@ function toggleFzegForm(form) {
         btnAlfa.classList.add(...activeClasses);
     }
 }
+
+function toggleAccordion(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('svg');
+
+    // Verifica se está aberto
+    const isOpen = content.style.maxHeight;
+
+    if (isOpen) {
+        content.style.maxHeight = null;
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.style.transform = 'rotate(180deg)';
+    }
+}
