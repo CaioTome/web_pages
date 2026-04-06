@@ -34,7 +34,7 @@
             <div class="text-2xl gothic-title cursor-pointer" onclick="showSection('inicio')">GRIM HOLLOW</div>
             <div
                 class="flex flex-wrap justify-center gap-2 md:gap-4 text-[10px] md:text-xs uppercase tracking-widest font-bold">
-                <button onclick="showSection('inicio')" class="nav-link active py-1" id="nav-inicio">O Mundo</button>
+                <button onclick="showSection('inicio')" class="nav-link active py-1" id="nav-inicio">Etharis</button>
                 <button onclick="showSection('reinos')" class="nav-link py-1" id="nav-reinos">Reinos</button>
                 <button onclick="showSection('imperio')" class="nav-link py-1" id="nav-imperio">Império
                     Ostoyano</button>
@@ -995,37 +995,39 @@
                 <div class="w-full md:w-1/4 flex flex-col gap-2">
                     <input type="text" id="person-search" onkeyup="filterPeople()" placeholder="Procurar pessoa..."
                         class="search-bar mb-4 !w-full">
-                    <button onclick="showPerson('soman')"
-                        class="person-link active p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
-                        id="person-btn-soman">Soman</button>
+
+                    <button onclick="showPerson('matriarca-mariska-kiraly')"
+                        class="person-link p-4 text-left border-l-2 border-red-900/30 hover:bg-red-900/10 transition-all uppercase tracking-widest font-bold text-sm"
+                        id="person-btn-matriarca-mariska-kiraly">Matriarca Mariska Király</button>
+
                 </div>
 
                 <!-- Área de Conteúdo (Lado Direito) -->
                 <div class="w-full md:w-3/4">
                     <div id="person-content">
-                        <!-- Soman (Visível por padrão) -->
-                        <div id="person-card-soman" class="person-detail section-enter">
+
+                        <!-- Matriarca Mariska Király -->
+                        <div id="person-card-matriarca-mariska-kiraly" class="person-detail section-enter">
                             <div class="image-card p-2 mb-6">
-                                <img src="Imagens/Soman.webp" alt="Soman"
+                                <img src="https://raw.githubusercontent.com/TheGiddyLimit/homebrew-img/main/img/GrimHollowCG24/046-04-018.mariska-kiraly.webp"
+                                    alt="Matriarca Mariska Király"
                                     class="max-h-[500px] w-auto mx-auto block opacity-90">
                             </div>
                             <div class="content-card p-8 border-l-4 border-red-800">
-                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Soman</h3>
-                                <p class="leading-relaxed mb-4">Os vampiros Soman afirmam ser seres divinos destinados a
-                                    governar e serem servidos pelos humanoides mortais de Etharis. Eles acreditam que a
-                                    maldição sanguínea teve origem no sangue de um deus da morte, tornando-os seus
-                                    serafins imortais. Se eles realmente são descendentes de tal ser é uma questão para
-                                    filósofos e caçadores de monstros.</p>
-
-                                <p class="leading-relaxed">Os vampiros Soman costumam se vestir de forma extravagante e
-                                    beber sangue em cálices de vinho. Eles dobram os mortais aos seus caprichos através
-                                    da manipulação, enquanto fingem ser soberanos benevolentes. Sua aparência é um
-                                    equilíbrio entre graça e poder, algo frequentemente ausente em outras linhagens,
-                                    permitindo-lhes disfarçar-se de humanoides com mais facilidade do que a maioria de
-                                    seus parentes mortos-vivos.</p>
+                                <h3 class="text-3xl mb-4 red-accent font-bold uppercase">Matriarca Mariska Király</h3>
+                                <p class="leading-relaxed mb-4">
+                                    A matriarca de Malkovia, Mariska Király, mantém-se firme em sua posição de que a
+                                    cidade permanece independente.
+                                    Ela é uma figura astuta e resiliente, navegando pelas complexas políticas entre
+                                    Raevo e a Corte Carmesim.
+                                </p>
+                                <p class="leading-relaxed">
+                                    Sua liderança é crucial para a manutenção da neutralidade de Malkovia, embora seus
+                                    subordinados possam ter outras ideias sobre o futuro da cidade.
+                                    Mariska é conhecida por sua habilidade em negociações e por proteger os interesses
+                                    de Malkovia acima de tudo.
+                                </p>
                             </div>
-                        </div>
-                        <div>
                         </div>
                     </div>
 
